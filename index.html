@@ -40,6 +40,16 @@
         input {
         	text-align: center;
         }
+        h3 {
+        	font-size: 15px;
+        }
+        a {
+        	color: black;
+        	font-size: 15px;
+        }
+        i {
+        	font-size: 15px;
+        }
     </style>
 </head>
 <body>
@@ -73,13 +83,16 @@
     </div>
 </div>
 <button type="button" class="btn btn-dark" style="border-radius: 10px; width: 1320px;"><kbd id="result">Output</kbd></button>
-</center>
 <script>
+	function message() {
+		document.getElementById("message").innerHTML = "Input both your weight and height, then click the button to calculate your BMI"
+	}
+
 	function BMIResult() {
-		var weight = document.getElementById("weight").value;
+		var weight = document.getElementById("weight").value; 
 		var height = document.getElementById("height").value**2;
-		var bmi = weight/height
-		var realbmi = bmi.toFixed(2);
+		var bmi = weight/height; // BMI Formula
+		var realbmi = bmi.toFixed(2); // Set the value to two decimals only
 
 		if (realbmi<18.5){
 			classify = "underweight"
@@ -92,8 +105,13 @@
 		} else if (realbmi>=35) {
 			classify = "extremely obese"
 		}
-		document.getElementById("result").innerHTML = "Your body mass index is " + Math.abs(realbmi) + " and you are " + classify
+		document.getElementById("result").innerHTML = "Your body mass index is " + Math.abs(realbmi) + " and you are " + classify // Show body mass index and classification on the kbd tag
 	}
 </script>
+<br><br>
+<a href="https://docs.google.com/document/d/1md0vZpXOeTo-WReqdWl_N1ocPXNDFztpNp41QeS31pk/edit?usp=sharing">Sources</a>
+<hr>
+<h3>© Shia Cruz (9-Emerald)</h3>
+</center>
 </body>
 </html>
