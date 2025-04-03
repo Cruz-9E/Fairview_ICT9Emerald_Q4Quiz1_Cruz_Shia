@@ -80,7 +80,19 @@
 		var height = document.getElementById("height").value**2;
 		var bmi = weight/height
 		var realbmi = bmi.toFixed(2);
-		document.getElementById("result").innerHTML = Math.abs(realbmi)
+
+		if (realbmi<18.5){
+			classify = "underweight"
+		} else if (realbmi>=18.5 && realbmi<25) {
+			classify = "normal"
+		} else if (realbmi>=25 && realbmi<30) {
+			classify = "overweight"
+		} else if (realbmi>=30 && realbmi<35) {
+			classify = "obese"
+		} else if (realbmi>=35) {
+			classify = "extremely obese"
+		}
+		document.getElementById("result").innerHTML = "Your body mass index is " + Math.abs(realbmi) + " and you are " + classify
 	}
 </script>
 </body>
